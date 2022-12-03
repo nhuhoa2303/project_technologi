@@ -1,0 +1,46 @@
+<div class="container" style="background-color: #e5e5d0; padding: 0 0 0 0">
+  <table class="table table-hover">
+    <thead>
+    <tr class="" style="background-color: black; color: white">
+      <th scope="col">#</th>
+      <th scope="col">Mã giao dịch</th>
+      <th scope="col">Ngày tạo giao dịch</th>
+      <th scope="col">Tên sản phẩm</th>
+      <th scope="col">Số lượng</th>
+      <th scope="col">Đơn giá</th>
+      <th scope="col">Tên khách hàng</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let h of listHistoryBill, index as i">
+      <th scope="row">{{i + 1 + numberPage * size}}</th>
+      <td>{{h.bill.code}}</td>
+      <td>{{h.bill.creationDate | date: 'dd-MM-yyyy hh:mm:ssa'}}</td>
+      <td>{{h.product.name}}</td>
+      <td>{{h.quantity}}</td>
+      <td>{{h.product.priceSale}}</td>
+      <td>{{h.customer.name}}</td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+
+<div class="container" style="padding: 0 0 0 0">
+
+  <div class="col-12" *ngIf="listHistoryBill.length != 0 " style="padding: 0 0 0 0">
+    <nav>
+      <ul class="pagination justify-content-end">
+        <li class="page-item"><a class="page-link" *ngIf="numberPage == 0" hidden><span>Trước</span></a></li>
+        <li class="page-item"><a class="page-link" *ngIf="numberPage != 0 "
+                                 (click)="previousPage($event)"><span>Trước</span></a>
+        </li>
+        <li class="page-item"><a class="page-link" (click)="goItem(page)">
+          <span> {{numberPage + 1}} | {{totalPage}}</span></a>
+        <li class="page-item "><a class="page-link" *ngIf="numberPage == totalPage"><span>Sau</span></a></li>
+        <li class="page-item "><a class="page-link" *ngIf="numberPage != totalPage - 1"
+                                  (click)="nextPage($event)"><span>Sau</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</div>

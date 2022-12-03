@@ -1,0 +1,40 @@
+<div class="container">
+  <div style="text-align: center; padding-top: 2%"><h2>Thông tin khách hàng</h2></div>
+  <div class="row" style="padding-top: 1%">
+    <div class="col-6 css_img">
+      <img src="{{customer.image}}">
+    </div>
+    <div class="col-6">
+      <div class="row css_input">
+        <div class="col-6 d-flex flex-column ">
+          <label class="p-2">Tên khách hàng:<i class="fa-solid fa-pen-to-square " (click)="nameReadonly()"></i></label>
+          <input class="p-2" id="name" value="{{customer.name}}" readonly>
+
+        </div>
+        <div class="col-6 d-flex flex-column ">
+          <label class="p-2">Tên tài khoản:<i class="fa-solid fa-pen-to-square"
+                                              (click)="usernameReadonly()"></i></label>
+          <input class="p-2" id="username" value="{{customer.appUser.userName}}" readonly>
+        </div>
+        <div class="col-5 d-flex flex-column">
+          <label class="p-2">Ngày sinh:<i class="fa-solid fa-pen-to-square" (click)="birthdayReadonly()"></i></label>
+          <input class="p-2" id="birthday" value="{{customer.birthday | date: 'dd-MM-yyyy'}}" readonly>
+        </div>
+        <div class="col-3 d-flex flex-column">
+          <label class="p-2">Giới tính:<i class="fa-solid fa-pen-to-square" (click)="genderReadonly()"></i></label>
+          <input class="p-2" id="gender" value="{{customer.gender}}" readonly>
+        </div>
+        <div class="col-4 d-flex flex-column">
+          <label class="p-2">Số điện thoại:<i class="fa-solid fa-pen-to-square" (click)="phoneReadonly()"></i></label>
+          <input class="p-2" id="phone" value="{{customer.phoneNumber}}" readonly>
+        </div>
+        <div class="col-12 d-flex flex-column">
+          <label class="p-2">Địa chỉ:<i class="fa-solid fa-pen-to-square" (click)="addressReadonly()"></i></label>
+          <input class="p-2" id="address" value="{{customer.address}}" readonly>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

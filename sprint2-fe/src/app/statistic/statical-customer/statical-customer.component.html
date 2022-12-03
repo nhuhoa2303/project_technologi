@@ -1,0 +1,89 @@
+<div class="container-fluid" style="width: 95%; height: 400px">
+  <div class="col-xl-12">
+    <select (change)="selectType($event.target)">
+      <option [value]="'1'">Tuần</option>
+      <option [value]="'2'">Tháng</option>
+      <option [value]="'3'">Năm</option>
+    </select>
+  </div>
+
+  <div id="week" class="col-xl-12 col-md-12">
+    <div class=" d-flex flex-row " style="height: auto">
+      <div class=" col-sx-4 col-md-4 col-sm-4  d-flex flex-row">
+        <div style="width: 100%; height: auto; border-style: solid ">
+          <h5 style="text-align: center">Danh sách khách hàng theo tuần </h5>
+          <div>
+            <table class="container-fluid">
+              <tr style="border-bottom: 1px solid #7f7bcd;">
+                <td style="text-align: left">Tên khách hàng</td>
+                <td style="text-align: center">Số lần đặt hàng</td>
+              </tr>
+              <tr *ngFor="let customerWeek of staticalCustomerByWeekList">
+                <td>{{customerWeek.name}}</td>
+                <td style="text-align: center">{{customerWeek.orderQuantity}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div id="chartJsW" class="col-xs-8 col-md-8 col-sm-8 "
+           style=" width: 100%; height: auto; padding: 0 0 0 20px ">
+        <canvas id="myChartProductWeek" style="width: 100%"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div id="month" class="col-xl-12 col-md-12 " style="display: none">
+    <div class=" d-flex flex-row d-inline-block" style="height: auto">
+      <div class=" col-sx-4 col-md-4 col-sm-4  d-flex flex-row">
+        <div style="width: 100%; height: auto; border-style: solid ">
+          <h5 style="text-align: center">Danh sách khách hàng theo tháng </h5>
+          <div>
+            <table class="container-fluid">
+              <tr style="border-bottom: 1px solid #7f7bcd;">
+                <td style="text-align: left">Tên khách hàng</td>
+                <td style="text-align: center">Số lần đặt hàng</td>
+              </tr>
+              <tr *ngFor="let customerMonth of staticalCustomerByMonthList">
+                <td>{{customerMonth.name}}</td>
+                <td style="text-align: center">{{customerMonth.orderQuantity}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div id="chartJsM" class="col-xs-8 col-md-8 col-sm-8 "
+           style=" width: 100%; height: auto; padding: 0 0 0 20px ">
+        <canvas id="myChartProductMonth" style="width: 100%"></canvas>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="year" class="col-xl-12 col-md-12 "  style="display: none">
+    <div class=" d-flex flex-row d-inline-block" style="height: auto">
+      <div class=" col-sx-4 col-md-4 col-sm-4  d-flex flex-row">
+        <div style="width: 100%; height: auto; border-style: solid ">
+          <h5 style="text-align: center">Danh sách khách hàng theo năm </h5>
+          <div>
+            <table class="container-fluid">
+              <tr style="border-bottom: 1px solid #7f7bcd;">
+                <td style="text-align: left">Tên khách hàng</td>
+                <td style="text-align: center">Số lần đặt hàng</td>
+              </tr>
+              <tr *ngFor="let customerYear of staticalCustomerByYearList">
+                <td>{{customerYear.name}}</td>
+                <td style="text-align: center">{{customerYear.orderQuantity}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div id="chartJsY" class="col-xs-8 col-md-8 col-sm-8 "
+           style=" width: 100%; height: auto; padding: 0 0 0 20px ">
+        <canvas id="myChartProductYear" style="width: 100%"></canvas>
+      </div>
+    </div>
+  </div>
+</div>

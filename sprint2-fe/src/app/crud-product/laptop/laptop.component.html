@@ -1,0 +1,250 @@
+<!-- Shop Start -->
+<div class="container-fluid">
+  <div class="row px-xl-5">
+    <!-- Shop Sidebar Start -->
+    <div class="col-lg-3 col-md-4">
+      <div class="bg-light p-4 mb-30">
+        <form action="" [formGroup]="formSearch" (ngSubmit)="searchNameProduct()">
+          <div class="input-group">
+            <input type="text" class="form-control" formControlName="nameSearch" placeholder="Tìm kiếm tên sản phẩm">
+            <div class="input-group-append">
+                            <span class="input-group-text bg-transparent text-primary">
+                                <i class="fa fa-search"></i>
+                            </span>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- Price Start -->
+      <h5 class=" position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Giá</span>
+      </h5>
+      <div class="bg-light p-4 mb-30">
+        <div>
+          <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+            <input type="radio" name="radio" class="custom-control-input" checked id="price-all"
+                   (input)="searchPrice('0','9999999999', $event)">
+            <label class="custom-control-label" for="price-all">Tất cả</label>
+            <span class="badge border font-weight-normal">1000</span>
+          </div>
+          <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+            <input type="radio" name="radio" class="custom-control-input" id="price-1"
+                   (input)="searchPrice('5000000','8000000', $event)">
+            <label class="custom-control-label" for="price-1">Từ 5 triệu - 8 triệu</label>
+            <span class="badge border font-weight-normal">150</span>
+          </div>
+          <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+            <input type="radio" name="radio" class="custom-control-input" id="price-2"
+                   (input)="searchPrice('8000000','20000000', $event)">
+            <label class="custom-control-label" for="price-2">Từ 8 triệu - 20 triệu</label>
+            <span class="badge border font-weight-normal">295</span>
+          </div>
+          <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+            <input type="radio" name="radio" class="custom-control-input" id="price-4"
+                   (input)="searchPrice('30000000','50000000', $event)">
+            <label class="custom-control-label" for="price-4">Từ 20 triệu - 50 triệu</label>
+            <span class="badge border font-weight-normal">145</span>
+          </div>
+          <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
+            <input type="radio" name="radio" class="custom-control-input" id="price-5"
+                   (input)="searchPrice('50000000','1000000000', $event)">
+            <label class="custom-control-label" for="price-5">Từ 50 triệu ++ </label>
+            <span class="badge border font-weight-normal">168</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Price End -->
+
+      <!-- CPU Start -->
+      <h5 class=" position-relative text-uppercase mb-3"><span
+        class="bg-secondary pr-3">Hãng sản xuất</span></h5>
+      <div class="bg-light p-4 mb-30">
+        <div>
+          <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+            <input type="radio" name="radio" class="custom-control-input" checked id="color-all"
+                   (input)="searchName('', $event)">
+            <label class="custom-control-label" for="color-all">Tất cả</label>
+            <span class="badge border font-weight-normal">1000</span>
+          </div>
+          <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+            <input type="radio" name="radio" class="custom-control-input" id="color-1"
+                   (input)="searchName('Lenovo', $event)">
+            <label class="custom-control-label" for="color-1">Lenovo</label>
+            <span class="badge border font-weight-normal">150</span>
+          </div>
+          <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+            <input type="radio" name="radio" class="custom-control-input" id="color-2"
+                   (input)="searchName('Macbook', $event)">
+            <label class="custom-control-label" for="color-2">Mac</label>
+            <span class="badge border font-weight-normal">295</span>
+          </div>
+          <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+            <input type="radio" name="radio" class="custom-control-input" id="color-3"
+                   (input)="searchName('Acer', $event)">
+            <label class="custom-control-label" for="color-3">Acer</label>
+            <span class="badge border font-weight-normal">246</span>
+          </div>
+          <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+            <input type="radio" name="radio" class="custom-control-input" id="color-4"
+                   (input)="searchName('Asus', $event)">
+            <label class="custom-control-label" for="color-4">Asus</label>
+            <span class="badge border font-weight-normal">145</span>
+          </div>
+          <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
+            <input type="radio" name="radio" class="custom-control-input" id="color-5"
+                   (input)="searchName('Dell', $event)">
+            <label class="custom-control-label" for="color-5">Dell</label>
+            <span class="badge border font-weight-normal">168</span>
+          </div>
+        </div>
+      </div>
+      <!-- CPU End -->
+
+      <!-- Size Start -->
+      <h5 class=" position-relative text-uppercase mb-3">
+        <span class="bg-secondary pr-3">CPU</span></h5>
+      <div class="bg-light p-4 mb-30 custom-control">
+        <div>
+          <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+            <input type="radio" name="radio" class="custom-control-input" checked id="size-all">
+            <label class="custom-control-label" for="size-all">Tất cả</label>
+            <span class="badge border font-weight-normal">1000</span>
+          </div>
+          <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+            <input type="radio" name="radio" class="custom-control-input" id="size-1">
+            <label class="custom-control-label" for="size-1">Intel i3</label>
+            <span class="badge border font-weight-normal">150</span>
+          </div>
+          <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+            <input type="radio" name="radio" class="custom-control-input" id="size-2">
+            <label class="custom-control-label" for="size-2">Intel i5</label>
+            <span class="badge border font-weight-normal">295</span>
+          </div>
+          <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+            <input type="radio" name="radio" class="custom-control-input" id="size-3">
+            <label class="custom-control-label" for="size-3">Intel i7</label>
+            <span class="badge border font-weight-normal">246</span>
+          </div>
+          <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+            <input type="radio" name="radio" class="custom-control-input" id="size-4">
+            <label class="custom-control-label" for="size-4">Amd ryzen 5</label>
+            <span class="badge border font-weight-normal">145</span>
+          </div>
+          <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
+            <input type="radio" name="radio" class="custom-control-input" id="size-5">
+            <label class="custom-control-label" for="size-5">Amd ryzen 7</label>
+            <span class="badge border font-weight-normal">168</span>
+          </div>
+        </div>
+      </div>
+      <!-- Size End -->
+    </div>
+
+
+    <!-- Shop Product Start -->
+    <div class="col-lg-9 col-md-8">
+      <div class="row pb-3">
+        <div class="col-12 pb-1">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <div>
+              <button class="btn btn-sm btn-light"><i class="fa fa-th-large"></i></button>
+              <button class="btn btn-sm btn-light ml-2"><i class="fa fa-bars"></i></button>
+            </div>
+            <div class="ml-2">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-light dropdown-toggle"
+                        data-toggle="dropdown">Sắp xếp
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <a class="dropdown-item" (click)="sortPriceAsc()">Giá thấp đến cao</a>
+                  <a class="dropdown-item" (click)="sortPriceDesc()">Giá từ cao đến thấp</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6 pb-1" *ngFor="let laptop of laptopList">
+          <div class="product-item bg-light mb-4">
+            <div class="product-img position-relative overflow-hidden">
+              <img class="img-fluid w-100" style="height: 200px" src="{{laptop.image}}" alt="">
+              <div class="product-action">
+                <a class="btn btn-outline-dark btn-square" (click)="addToCart(laptop)"> <i
+                  class="fa fa-shopping-cart"></i></a>
+                <a class="btn btn-outline-dark btn-square" *ngIf="role ===  'ADMIN'"
+                   [routerLink]="['/product-edit',laptop.id]"><i
+                  class="fa-sharp fa-solid fa-pen text-primary"
+                  style="font-size: 22px; color: black!important;"></i></a>
+                <a class="btn btn-outline-dark btn-square" *ngIf="role ===  'ADMIN'" data-toggle="modal"
+                   data-target="#deleteProductModal" (click)="showModalDelete(laptop)">
+
+                  <i class="fa-sharp fa-solid fa-trash text-danger"
+                     style="font-size: 22px; color: black!important;"></i></a>
+
+                <a class="btn btn-outline-dark btn-square" [routerLink]="['/detail/', laptop.id]"><i
+                  class="fa fa-search"></i></a>
+              </div>
+            </div>
+            <div class="text-center py-4">
+              <a class="h6 text-decoration-none text-truncate"
+                 [routerLink]="['/detail/', laptop.id]">{{laptop.name}}</a>
+              <div class="d-flex align-items-center justify-content-center mt-2">
+                <h5>{{laptop.priceSale | currency: 'VND': ''}}đ</h5>
+                <h6 class="text-muted ml-2">
+                  <del>{{laptop.price | currency: 'VND': ''}}đ</del>
+                </h6>
+              </div>
+              <div class="d-flex align-items-center justify-content-center mb-1">
+                <span>Số lượng còn: {{laptop.quantity}} cái</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-12 text-center" style="font-size: 20px; margin-top: 100px "
+             *ngIf="laptopList.length == 0  ">
+          Không có dữ liệu về sản phẩm đó
+        </div>
+
+        <div class="col-12" *ngIf="laptopList.length != 0 ">
+          <nav>
+            <ul class="pagination justify-content-center">
+              <li class="page-item"><a class="page-link" *ngIf="numberPage == 0" hidden><span>Trước</span></a></li>
+              <li class="page-item"><a class="page-link" *ngIf="numberPage != 0 " (click)="previousPage($event)"><span>Trước</span></a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" (click)="goItem(page)"><span> {{numberPage + 1}}
+                  | {{totalPage}}</span></a>
+              </li>
+              <li class="page-item "><a class="page-link" *ngIf="numberPage == totalPage"><span>Sau</span></a></li>
+              <li class="page-item "><a class="page-link" *ngIf="numberPage != totalPage - 1"
+                                        (click)="nextPage($event)"><span>Sau</span></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <!-- Shop Product End -->
+  </div>
+</div>
+<!-- Shop End -->
+
+
+<!-- Modal delete -->
+<div class="modal fade" id="deleteProductModal" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        Bạn có muốn xóa sản phẩm <span style="color: red">{{nameDelete}}</span> có giá <span
+        style="color: red">{{priceDelete | currency: 'VND': ''}}đ</span> không
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="deleteProduct(idDelete)">Xóa
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

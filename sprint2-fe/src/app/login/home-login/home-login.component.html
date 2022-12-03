@@ -1,0 +1,70 @@
+<div class="d-flex justify-content-center">
+  <div class="container">
+    <h2 class=" position-relative text-uppercase mx-xl-5 mb-4"><span
+      class="bg-secondary pr-3">Đăng nhập</span></h2>
+    <h5 class=" position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Sử dụng tài khoản của bạn để đăng nhập</span>
+    </h5>
+    <div class="row px-xl-5">
+      <div class="col-lg-12 mb-5">
+        <div class="contact-form bg-light p-30">
+          <div id="success"></div>
+          <form name="sentMessage" id="contactForm" [formGroup]="loginForm" (ngSubmit)="onLogin()"
+                novalidate="novalidate">
+
+
+            <div class="control-group ">
+              <input type="text" class="form-control" id="username" placeholder="Nhập tài khoản"
+                     required="required" data-validation-required-message="Nhập tài khoản" formControlName="username"/>
+              <p class="help-block text-danger"></p>
+            </div>
+            <div class="control-group ">
+              <input type="password" class="form-control" id="password" placeholder="Nhập mật khẩu"
+                     data-validation-required-message="Please enter your email" formControlName="password"/>
+              <p class="help-block text-danger"></p>
+            </div>
+            <div class="control-group ">
+              <div class="check-box">
+                <label for="RememberMe"> <input type="checkbox" data-val="true"
+                                                data-val-required="The Ghi nhớ? field is required."
+                                                id="RememberMe" name="RememberMe" value="true"
+                                                data-gtm-form-interact-field-id="0"> Ghi nhớ tài khoản </label>
+              </div>
+            </div>
+            <p style="margin-bottom: 8px"><a>Đăng ký người dùng mới</a></p>
+            <p style="margin-bottom: 0"><a>Quên mật khẩu</a></p>
+
+            <div class="input-group pt-3 ">
+              <button class="btn btn-outline-info col-4 " style="color: black; padding-left: 0" type="submit"
+                      id="sendMessageButton"><i class="fa-solid fa-right-to-bracket"
+                                                style="padding-right: 20px" ></i>
+                <span>Đăng nhập</span>
+              </button>
+            </div>
+
+            <p style="letter-spacing: -2px;margin-bottom: 0;margin-top: 16px;">&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;
+              <span style="letter-spacing: 2px; margin: 0 15px;"> or </span>&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;&#x2015;
+            </p>
+
+            <div class="input-group pt-3">
+              <button class="btn btn-outline-primary col-4">
+                <i class="fab fa-facebook"></i><span style="margin-left: 5px">Đăng nhập bằng Facebook</span>
+              </button>
+            </div>
+
+
+            <div class="input-group pt-3 ">
+              <button class="btn btn-outline-danger col-4 " (click)="signInWithGoogle()">
+                <i class="fab fa-google"></i><span style="margin-left: 15px"> Đăng nhập bằng Google</span>
+              </button>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+

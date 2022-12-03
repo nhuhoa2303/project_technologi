@@ -1,0 +1,55 @@
+<div class="container-fluid" style="width: 95%; height: 500px; padding-top: 0">
+  <div class=" d-flex flex-row " style="padding-top: 0">
+    <div class="col-4 " style="padding-left: 30px; border: 10px">
+      <div class="pt-2">
+        <div>
+          <label for="country">Thống kê</label>
+          <select id="country" (change)="selectType($event.target)" class="form-control h-25">
+            <option [value]="'0'">Chọn</option>
+            <option [value]="'1'">7 ngày</option>
+            <option [value]="'2'">30 ngày gần đây</option>
+            <option [value]="'3'">365 ngày gần đây</option>
+          </select>
+        </div>
+        <form [formGroup]="formChart">
+          <div>
+            <label for="start">Ngày bắt đầu</label>
+            <input class="form-control" type="date" id="start" formControlName="start">
+          </div>
+
+          <div>
+            <label for="end">Ngày kết thúc</label>
+            <input class="form-control" type="date" id="end" formControlName="end">
+          </div>
+         <div> <input type="submit" value="Thống kê" ></div>
+        </form>
+
+      </div>
+    </div>
+    <div id="toSearch" class="col-8 ">
+      <div id="chartJsS" style="padding: 0 0 0 20px ">
+        <canvas id="myChartProductToSearch" style="width: 100%; height: 300px"></canvas>
+      </div>
+    </div>
+
+<!--    <div id="week" class="col-8 " style="display: none">-->
+<!--      <div id="chartJsW" style="padding: 0 0 0 20px ">-->
+<!--        <canvas id="myChartProductWeek" style="width: 100%; height: 300px"></canvas>-->
+<!--      </div>-->
+<!--    </div>-->
+
+    <div id="month" class="col-8 " style="display: none">
+      <div id="chartJsM" style="padding: 0 0 0 20px ">
+        <canvas id="myChartProductMonth" style="width: 100%; height: 200px"></canvas>
+      </div>
+    </div>
+
+
+    <div id="year" class="col-8 " style="display: none">
+      <div id="chartJsY" style="padding: 0 0 0 20px ">
+        <canvas id="myChartProductYear" style="width: 100%; height: 200px"></canvas>
+      </div>
+    </div>
+
+  </div>
+</div>

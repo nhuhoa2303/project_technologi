@@ -1,0 +1,124 @@
+<div class="container-fluid">
+
+  <div class="row align-items-center">
+    <!-- For Demo Purpose -->
+
+    <!-- Registeration Form -->
+    <div class="col-md-7 col-lg-6 pr-lg-5 mb-5 mb-md-0 ">
+      <h1 style="text-align: center;">Sửa sản phẩm</h1>
+      <form *ngIf="formEditProduct" [formGroup]="formEditProduct" (ngSubmit)="update()">
+        <div class="row">
+          <input id="id" type="text" name="id" formControlName="id" placeholder="id"
+                 class="form-control bg-white border-left-0 border-md" hidden>
+
+          <div class="input-group col-lg-6 mb-4">
+            <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                               <i class="fa-brands fa-product-hunt"></i>
+                            </span>
+            </div>
+            <input id="name" type="text" name="name" formControlName="name" placeholder="Tên sản phẩm"
+                   class="form-control bg-white border-left-0 border-md">
+          </div>
+
+          <div class="input-group col-lg-6 mb-4">
+            <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                         <i class="fa-solid fa-calendar-days"></i>
+                            </span>
+            </div>
+            <input id="createDate" type="date" formControlName="createDate" name="createDate" placeholder=""
+                   class="form-control bg-white border-left-0 border-md">
+          </div>
+
+          <div class="input-group col-lg-6 mb-4">
+            <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa-solid fa-bars"></i>
+                            </span>
+            </div>
+            <input id="price" type="text" name="price" formControlName="price" placeholder="Nhập giá sản phẩm"
+                   class="form-control bg-white border-left-0 border-md">
+          </div>
+
+          <div class="input-group col-lg-6 mb-4">
+            <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                              <i class="fa-solid fa-bars"></i>
+                            </span>
+            </div>
+            <input id="quantity" type="text" name="quantity" formControlName="quantity" placeholder="Nhập số lượng"
+                   class="form-control bg-white border-md border-left-0 pl-3">
+          </div>
+
+          <div class="input-group col-lg-6 mb-4">
+            <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                              <i class="fa-solid fa-bars"></i>
+                            </span>
+            </div>
+            <input id="priceSale" type="text" formControlName="priceSale" name="priceSale" placeholder="Giá đc giảm"
+                   class="form-control bg-white border-left-0 border-md">
+          </div>
+
+          <div class="input-group col-lg-6 mb-4">
+            <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                           <i class="fa-solid fa-bars"></i>
+                            </span>
+            </div>
+            <input id="madeIn" type="text" name="madeIn" formControlName="madeIn" placeholder="Nhập nơi sản xuất"
+                   class="form-control bg-white border-md border-left-0 pl-3">
+          </div>
+
+          <div class="col-lg-12 mb-4">
+            <textarea id="detail" name="detail" formControlName="detail" placeholder="Mô tả sản phẩm"
+                      class="form-control bg-white"></textarea>
+          </div>
+          <div class="col-lg-12 mb-4">
+            <textarea id="specifications" name="specifications" formControlName="specifications"
+                      placeholder="Thông tin kĩ thuật"
+                      class="form-control bg-white"></textarea>
+          </div>
+          <div class="col-lg-6 mb-4">
+            <select class="form-control" formControlName="category" [compareWith]="displayValueDefault">
+              <option *ngFor="let c of categoryList" [ngValue]="c">{{c.name}}</option>
+            </select>
+          </div>
+
+          <div class="input-group col-lg-6 mb-4">
+            <div class="input-group-prepend">
+              <label for="image" style="cursor: pointer"
+                     class="input-group-text bg-white px-4 border-md border-right-0">
+                <i class="fa-regular fa-image"></i>
+
+              </label>
+              <input style="display: none" id="image" type="file" (change)="showPreview($event)" name="image"
+                     accept="image/*">
+            </div>
+            <p class="form-control input-group-text bg-white px-4 border-md pl-3"> Ảnh sản phẩm</p>
+            <!--            <input *ngIf=" selectFileImg== selectFileImg" type="text" name="image"
+            formControlName="image"-->
+            <!--                   class="form-control bg-white border-md border-left-0 pl-3">-->
+          </div>
+
+
+          <!-- Submit Button -->
+          <div class="form-group col-lg-12 mx-auto mb-0">
+            <button type="submit" class="btn btn-primary btn-block py-2">
+              <span class="font-weight-bold">Cập nhật sản phẩm</span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="col-md-5 ml-5">
+      <div style="text-align: center; margin-bottom: 20px"><h1>Ảnh sản phẩm</h1></div>
+      <div style="height: 600px;">
+        <img [src]="imgSrc" id="img" (click)="fileUploader.click()" style="height: 550px "
+             class="img-fluid mb-3 d-none d-md-block">
+      </div>
+    </div>
+  </div>
+</div>
